@@ -37,13 +37,13 @@ const taskArray = ref([]);
 function calculateTimeLogs(numberOfTasks, workingHours, hasDailyMeeting) {
   taskArray.value = [];
 
-  let remainingMinutes = randomInteger(workingHours * 60 - 5, workingHours * 60 + 15);
+  let remainingMinutes = randomInteger(workingHours * 60 - 3, workingHours * 60 + 9);
   totalHours.value = convertMinutesToHHMM(remainingMinutes);
   let remainingTasks = numberOfTasks;
 
   // Add daily meeting
   if (hasDailyMeeting) {
-    const minutes = randomInteger(14, 22);
+    const minutes = randomInteger(11, 21);
     taskArray.value.push("00:" + minutes);
     remainingMinutes -= minutes;
   }
@@ -51,7 +51,7 @@ function calculateTimeLogs(numberOfTasks, workingHours, hasDailyMeeting) {
   const distributingList = [];
   // Give each task a random amount of time
   for (let i = 0; i < remainingTasks; i++) {
-    distributingList[i] = randomInteger(60, 130);
+    distributingList[i] = randomInteger(59, 121);
     remainingMinutes -= distributingList[i];
   }
 
