@@ -43,7 +43,7 @@ function calculateTimeLogs(numberOfTasks, workingHours, hasDailyMeeting) {
 
   // Add daily meeting
   if (hasDailyMeeting) {
-    const minutes = randomInteger(11, 21);
+    const minutes = randomInteger(21, 32);
     taskArray.value.push("00:" + minutes);
     remainingMinutes -= minutes;
   }
